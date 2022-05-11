@@ -1,0 +1,39 @@
+.cards{
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+  }
+  .headerBackground{
+    background-color:grey;
+  }
+  .cardcontainers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100vw;
+    justify-content: center;
+  }
+  .moviecardimage{
+   width: 20vw; 
+   height: 40vh;
+   margin:1rem;
+   color:white;
+   position:relative;
+  }
+  .movie-title{
+  position:absolute;
+  top: 20%;
+  left:25%;
+  color:white;
+  }
+  .moviesbutton{
+    color:aqua;
+    position: absolute;
+    bottom: 2rem;
+  }

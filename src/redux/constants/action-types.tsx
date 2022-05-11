@@ -1,0 +1,6 @@
+export const actionTypes={
+    SET_MOVIES:"SET_MOVIES",
+    SELECT_MOVIES:"SELECT_MOVIES",
+    ADD_FAV:"ADD_FAV",
+    API_REQUEST:"API_REQUEST"
+}
