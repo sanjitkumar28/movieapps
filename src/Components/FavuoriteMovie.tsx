@@ -16,11 +16,9 @@ import { Link } from 'react-router-dom';
      <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        {/* <a className="nav-link" href="#">Home</a> */}
         <Link to="/"  className="nav-link" style={{ color: '#FFF',textDecoration: 'none'}}> Home</Link>
       </li>
       <li className="nav-item">
-        {/* <a className="nav-link" href="#">Favourites</a> */}
         <Link to="/favourite"  className="nav-link" style={{ color: '#FFF',textDecoration: 'none'}}> Favourites</Link>
       </li>
     </ul>

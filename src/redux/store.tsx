@@ -4,5 +4,4 @@ import { applyMiddleware } from "redux";
 import loggerMiddleWare from "./middleware/logger";
 import reducer from "./reducer";
 const store = createStore(reducer,  composeWithDevTools(applyMiddleware(loggerMiddleWare)));
-export type AppDispatch = typeof store.dispatch
 export default store;

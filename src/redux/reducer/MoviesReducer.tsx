@@ -5,6 +5,8 @@ const initialState={
 }
 export default function moviesReducer(state=initialState, action:any) {
     if(action.type==actionTypes.SET_MOVIES){
+        console.log('dispatch');
+        
         return {...state,movies:action.payload}
     }
     else{

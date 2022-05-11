@@ -14,5 +14,4 @@ export const addFavMovie=(movie:MovieList)=>{
 export const apiRequest = (url:string) => ({
   type: actionTypes.API_REQUEST,
   payload: url,
-  // meta: { method, url, onSuccess, onError }
 });

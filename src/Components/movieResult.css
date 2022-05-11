@@ -35,5 +35,10 @@
   .moviesbutton{
     color:aqua;
     position: absolute;
+    bottom: 3rem;
+  }
+  .moviesbutton{
+    color:aqua;
+    position: absolute;
     bottom: 2rem;
   }

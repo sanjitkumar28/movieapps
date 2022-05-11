@@ -5,22 +5,22 @@ import { RootState } from '../redux/reducer'
 import { useDispatch } from 'react-redux'
 import FavMovie from '../redux/reducer/FavMovieReducer'
 import { addFavMovie } from '../redux/actions/movieAction'
+import { useNavigate } from 'react-router-dom'
 import './movieResult.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 const MovieResult=()=>{
+  const navigate=useNavigate();
     const moviesList:MovieList[]=useSelector((state:RootState)=>state.MoviesList.movies);
     const dispatch=useDispatch();
     const[hover,setHover]=useState(' ');
+
    const handleClick=(movie:MovieList)=>{
-    const responsedata=axios.get(`http://www.omdbapi.com/?i=${hover}&apikey=333bea2b`)
-     .then((response)=>{
-        console.log(response.data);
-       
-     })
-    //  dispatch(FavMovie())
-    console.log(movie);
+    console.log('movie',movie);
     dispatch(addFavMovie(movie));
+   }
+   const handleMovieClick=(event:React.MouseEvent<HTMLElement>)=>{
+    navigate('/details')
    }
   return (
     <>
@@ -28,15 +28,14 @@ const MovieResult=()=>{
     {
       
         moviesList.map((movie:MovieList)=>(
-           <div className='moviecardimage' onMouseEnter={()=>{setHover(movie.imdbID)}} onMouseLeave={()=>{setHover('')}}>
-            <img src={movie.Poster} alt="..." className='moviecardimage'/>
+           <div className='moviecardimage' onMouseEnter={()=>{setHover(movie.imdbID)}} onMouseLeave={()=>{setHover('')}}  >
+            <img src={movie.Poster} alt="..." className='moviecardimage' onClick={()=> navigate('/details',{state:{img:movie.Poster,title:movie.Title,year:movie.Year,type:movie.Type}})}/ >
             <h5 className="movie-title">{movie.Title}</h5>
             <div className="button-wrapper" style={{display:'flex',width:'100%',justifyContent:'center'}}>  
                     {
                      hover==movie.imdbID?
                      <a className="btn btn-primary moviesbutton" onClick={()=>handleClick(movie)}>Add to Favourites</a>
                      :<p></p>
-                    //  <Link to="/favourite" className="btn btn-primary moviesbutton" onClick={()=>handleClick(movie)}>Add to Favourites</Link>:<p></p>
                     }
                    </div>
          </div>

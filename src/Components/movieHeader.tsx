@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import { apiRequest } from '../redux/actions/movieAction'
 
 const MovieHeader=()=>{
-     const[movieName,setmovieName]=useState('')
+     const[movieName,setmovieName]=useState('harry')
      const dispatch=useDispatch();
 
      const handleOnChange=(event:React.ChangeEvent<HTMLInputElement>)=>{
@@ -23,13 +23,6 @@ const MovieHeader=()=>{
      event.preventDefault();
      const url=`http://www.omdbapi.com/?s=${movieName}&apikey=333bea2b`
      dispatch(apiRequest(url))
-    // const responseData=axios.get(`http://www.omdbapi.com/?s=${movieName}&apikey=333bea2b`)
-    // .then((response)=>{
-    //     console.log(response.data.Search);
-    //     setmovieName('');
-    //     dispatch(setMovie(response.data.Search))
-    // })
-    // console.log('movie',movieName);
     }
 
   return (
@@ -42,11 +35,9 @@ const MovieHeader=()=>{
      <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        {/* <a className="nav-link" href="#">Home</a> */}
         <Link to="/"  className="nav-link" style={{ color: '#FFF',textDecoration: 'none'}}> Home</Link>
       </li>
       <li className="nav-item">
-        {/* <a className="nav-link" href="#">Favourites</a> */}
         <Link to="/favourite"  className="nav-link" style={{ color: '#FFF',textDecoration: 'none'}}> Favourites</Link>
       </li>
     </ul>

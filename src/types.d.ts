@@ -12,3 +12,10 @@ type FavMovieList={
     Type:string,
     Poster:string,  
 }
+type FavMovieList={
+    Title:string,
+    Year:string,
+    imdbID:string,
+    Type:string,
+    Poster:string,  
+}
